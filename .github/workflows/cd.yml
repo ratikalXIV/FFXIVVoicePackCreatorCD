@@ -19,8 +19,11 @@ jobs:
 #          with:
 #            args: -h
 
-        - name: Install FFMPEG?
-          run: choco install ffmpeg -y --no-progress
+        - name: Install ffmpeg?
+          run: npm install ffmpeg-static
+
+#        - name: Install FFMPEG?
+#          run: choco install ffmpeg -y --no-progress
 # GOOD
 #        - name: Install msbuild
 #          uses: microsoft/setup-msbuild@v1.1
