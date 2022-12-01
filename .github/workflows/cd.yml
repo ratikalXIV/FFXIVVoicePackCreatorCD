@@ -16,8 +16,6 @@ jobs:
 
         - name: Chocolatey Action
           uses: crazy-max/ghaction-chocolatey@v2.1.0
-          with:
-            args: -h
 
         - name: Install FFMPEG?
           run: choco install ffmpeg -y --no-progress
@@ -31,7 +29,8 @@ jobs:
        
         - name: Is stuff here?
           shell: cmd
-          run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
+          run: cd C:\ProgramData\chocolatey\lib\ffmpeg\tools && dir
+          #run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
 
 # Download FFMPEG to res
 #        - name: Download FFMPEG
