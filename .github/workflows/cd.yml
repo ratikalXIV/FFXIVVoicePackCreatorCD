@@ -14,8 +14,10 @@ jobs:
     steps:
         - uses: actions/checkout@v3
 
-        - name: Chocolatey Action
-          uses: crazy-max/ghaction-chocolatey@v2.1.0
+#        - name: Chocolatey Action
+#          uses: crazy-max/ghaction-chocolatey@v2.1.0
+#          with:
+#            args: -h
 
         - name: Install FFMPEG?
           run: choco install ffmpeg -y --no-progress
