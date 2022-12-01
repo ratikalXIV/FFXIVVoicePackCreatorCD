@@ -33,8 +33,7 @@ jobs:
 #          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
        
         - name: Is stuff here?
-          shell: cmd
-          run: cd C:\ProgramData\chocolatey\lib\ffmpeg\tools && dir
+          run: ls
           #run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
 
 # Download FFMPEG to res
