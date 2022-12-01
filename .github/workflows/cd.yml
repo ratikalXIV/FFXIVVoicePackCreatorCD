@@ -30,4 +30,4 @@ jobs:
         
         - name: Is stuff here?
           shell: cmd
-          run: cd FFXIVVoiceClipNameGuesser\debug\Release && dir
+          run: cd FFXIVVoiceClipNameGuesser\bin\Debug && dir
