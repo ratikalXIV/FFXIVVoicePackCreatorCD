@@ -31,8 +31,8 @@ jobs:
           run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
 
 # Download FFMPEG to res
-        - name: Download FFMPEG
-          run: 
+#        - name: Download FFMPEG
+#          run: 
 # Extract
 # RM other stuff maybe
 # Zip back up
