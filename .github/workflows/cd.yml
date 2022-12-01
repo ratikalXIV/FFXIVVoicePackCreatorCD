@@ -14,20 +14,26 @@ jobs:
     steps:
         - uses: actions/checkout@v3
 
-        - name: Install msbuild
-          uses: microsoft/setup-msbuild@v1.1
+        - name: Chocolatey Action
+          uses: crazy-max/ghaction-chocolatey@v2.1.0
+          run: choco install ffmpeg
+# GOOD
+#        - name: Install msbuild
+#          uses: microsoft/setup-msbuild@v1.1
 
-        - name: Build app
-          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
-
-#        - name: Setup dotNET 4.7.2
-#          uses: actions/setup-dotnet@v3
-#          with:
-#            dotnet-version: 5.0.x
-
-  #      - name: System.Resources.Extensions
-  #        run: dotnet add package System.Resources.Extensions --version 7.0.0
-        
+# GOOD
+#        - name: Build app
+#          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
+       
         - name: Is stuff here?
           shell: cmd
           run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
+
+# Download FFMPEG to res
+        - name: Download FFMPEG
+          run: 
+# Extract
+# RM other stuff maybe
+# Zip back up
+# upload
+
