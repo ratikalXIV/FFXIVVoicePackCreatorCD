@@ -16,7 +16,8 @@ jobs:
 
         - name: Chocolatey Action
           uses: crazy-max/ghaction-chocolatey@v2.1.0
-          run: choco install ffmpeg
+          with:
+            args: -h
 # GOOD
 #        - name: Install msbuild
 #          uses: microsoft/setup-msbuild@v1.1
