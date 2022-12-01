@@ -18,8 +18,9 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: 5.0.x
-          env:
-            NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
+
+        - name: System.Resources.Extensions
+          run: dotnet add package System.Resources.Extensions --version 7.0.0
         
         - name: Build
           run: dotnet build --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
@@ -27,13 +28,3 @@ jobs:
         - name: Is stuff here?
           shell: cmd
           run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
-          
-          
-          
-          #run: dotnet build /t:pack /p:Configuration=Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
-        
-    #- name: Pack
-    #run: dotnet pack --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
-          
-        #- name: Publish
-        #  run: dotnet nuget push FFXIVVoicePackCreatorCD/bin/Release/*.nupkg
