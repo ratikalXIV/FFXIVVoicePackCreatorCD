@@ -9,3 +9,10 @@ C:\Users\stel9\source\repos\FFXIVVoiceClipNameGuesser\FFXIVVoiceClipNameGuesser\
 C:\Users\stel9\source\repos\FFXIVVoiceClipNameGuesser\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.csproj.CoreCompileInputs.cache
 C:\Users\stel9\source\repos\FFXIVVoiceClipNameGuesser\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.exe
 C:\Users\stel9\source\repos\FFXIVVoiceClipNameGuesser\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.pdb
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.csproj.AssemblyReference.cache
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.VoiceSelection.resources
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.MainWindow.resources
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.Properties.Resources.resources
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.FilePicker.resources
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.SCDCreator.resources
+C:\Users\Laxpl\Documents\GitHubXIV\Uncompiled\FFXIVVoicePackCreatorCD\FFXIVVoiceClipNameGuesser\obj\Debug\FFXIVVoicePackCreator.csproj.GenerateResource.cache

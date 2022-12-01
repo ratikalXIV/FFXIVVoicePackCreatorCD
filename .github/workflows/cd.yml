@@ -13,18 +13,21 @@ jobs:
     runs-on: windows-latest
     steps:
         - uses: actions/checkout@v3
-        
-        - name: Setup dotNET 4.7.2
-          uses: actions/setup-dotnet@v3
-          with:
-            dotnet-version: 5.0.x
+
+        - name: Install msbuild
+          uses: microsoft/setup-msbuild@v1.1
+
+        - name: Build app
+          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj
+
+#        - name: Setup dotNET 4.7.2
+#          uses: actions/setup-dotnet@v3
+#          with:
+#            dotnet-version: 5.0.x
 
   #      - name: System.Resources.Extensions
   #        run: dotnet add package System.Resources.Extensions --version 7.0.0
         
-        - name: Build
-          run: dotnet build --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
-          
         - name: Is stuff here?
           shell: cmd
-          run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
+          run: cd FFXIVVoiceClipNameGuesser\debug\Release && dir
