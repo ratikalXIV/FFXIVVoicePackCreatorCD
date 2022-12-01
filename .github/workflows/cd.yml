@@ -19,8 +19,8 @@ jobs:
           with:
             dotnet-version: 5.0.x
 
-        - name: System.Resources.Extensions
-          run: dotnet add package System.Resources.Extensions --version 7.0.0
+  #      - name: System.Resources.Extensions
+  #        run: dotnet add package System.Resources.Extensions --version 7.0.0
         
         - name: Build
           run: dotnet build --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
