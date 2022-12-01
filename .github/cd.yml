@@ -1,0 +1,39 @@
+
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: windows-latest
+    steps:
+        - uses: actions/checkout@v3
+        
+        - name: Setup dotNET 4.7.2
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: 5.0.x
+          env:
+            NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
+        
+        - name: Build
+          run: dotnet build --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
+          
+        - name: Is stuff here?
+          shell: cmd
+          run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
+          
+          
+          
+          #run: dotnet build /t:pack /p:Configuration=Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
+        
+    #- name: Pack
+    #run: dotnet pack --configuration Release FFXIVVoiceClipNameGuesser/FFXIVVoicePackCreator.csproj
+          
+        #- name: Publish
+        #  run: dotnet nuget push FFXIVVoicePackCreatorCD/bin/Release/*.nupkg
