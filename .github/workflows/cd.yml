@@ -18,7 +18,7 @@ jobs:
           uses: microsoft/setup-msbuild@v1.1
 
         - name: Build app
-          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj
+          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
 
 #        - name: Setup dotNET 4.7.2
 #          uses: actions/setup-dotnet@v3
@@ -30,4 +30,4 @@ jobs:
         
         - name: Is stuff here?
           shell: cmd
-          run: cd FFXIVVoiceClipNameGuesser\bin\Debug && dir
+          run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
