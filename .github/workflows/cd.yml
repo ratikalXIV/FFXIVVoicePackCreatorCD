@@ -41,23 +41,25 @@ jobs:
 
 # 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
 
-# GOOD
-#        - name: Install msbuild
-#          uses: microsoft/setup-msbuild@v1.1
 
-# GOOD
-#        - name: Build app
-#          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
+        - name: Install msbuild
+          uses: microsoft/setup-msbuild@v1.1
 
-#        - name: Is stuff here?
-#          run: ls
-          #run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
 
-# Download FFMPEG to res
-#        - name: Download FFMPEG
-#          run: 
-# Extract
-# RM other stuff maybe
+        - name: Build app
+          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
+
+        - name: Is stuff here?
+          run: ls FFXIVVoiceClipNameGuesser\bin\Release
+
 # Zip back up
+        - name: Zip back up
+          run: Compress-Archive -Path ./FFXIVVoiceClipNameGuesser\bin\Release -DestinationPath Release.zip
 # upload
+        - name: Upload
+          uses: actions/upload-artifact@v3
+          with:
+            name: release
+            path: Release.zip
+
 
