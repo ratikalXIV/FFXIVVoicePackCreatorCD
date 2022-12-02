@@ -6,6 +6,3 @@ function Download
     wget https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z -o 
 ffmpeg.7z
 }
-
-
-
