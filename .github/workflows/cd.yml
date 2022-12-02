@@ -1,5 +1,5 @@
 
-name: .NET Core Desktop
+name: Building FFXIV Voice Pack Creator
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
 
 jobs:
   Build:
+    name: Build
     runs-on: windows-latest
     steps:
         - uses: actions/checkout@v3
@@ -35,8 +36,8 @@ jobs:
         - name: fuck it we extract
           run: 7z e ffmpeg.7z -oFFXIVVoiceClipNameGuesser/bin/Release/res ffmpeg.exe -r
 
-        - name: IS IT IN THERE
-          run: ls ./FFXIVVoiceClipNameGuesser/bin/Release/res
+#        - name: IS IT IN THERE
+#          run: ls ./FFXIVVoiceClipNameGuesser/bin/Release/res
 
 # 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
 
@@ -56,7 +57,45 @@ jobs:
         - name: Upload
           uses: actions/upload-artifact@v3
           with:
-            name: release
+            name: Release
             path: ./FFXIVVoiceClipNameGuesser\bin\Release
+  Release:
+    name: Release
+    runs-on: windows-latest
+    needs: Build
+    steps:
+    - name:
+      uses: actions/download-artifact@v3
+      with:
+        name: Release    
+    
+    - name: Test
+      run: ls -R
+    
+    - name: Zip it up
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'release.zip'
 
+    - name: Upload source code
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+    
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./release.zip
+        asset_name: release-v${{ github.ref }}.zip
+        asset_content_type: application/zip
 
+      
