@@ -72,6 +72,12 @@ jobs:
     - name: Test
       run: ls -R
     
+    - name: Compress down?
+      run: Start-Process ./FFXIVVoicePackCreator.exe
+
+    - name: pls stop
+      run: Stop-Process ./FFXIVVoicePackCreator.exe
+
     - name: Zip it up
       uses: thedoctor0/zip-release@main
       with:
