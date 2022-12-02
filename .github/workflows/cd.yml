@@ -71,9 +71,6 @@ jobs:
     
     - name: Test
       run: ls -R
-    
-    - name: Remove the shit
-      run: 
 
     - name: Zip it up
       uses: thedoctor0/zip-release@main
