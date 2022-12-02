@@ -29,6 +29,14 @@ jobs:
           shell: pwsh
           run: powershell -ExecutionPolicy Bypass -NoProfile -File ./download-ffmpeg.ps1 Download
 
+        - name: IS IT HERE?
+          run: ls
+
+        - name: fuck it we extract
+          run: 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
+
+# 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
+
 # GOOD
 #        - name: Install msbuild
 #          uses: microsoft/setup-msbuild@v1.1
