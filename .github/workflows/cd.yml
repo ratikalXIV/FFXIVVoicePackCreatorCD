@@ -31,9 +31,12 @@ jobs:
 # GOOD
 #        - name: Build app
 #          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
-       
-        - name: Is stuff here?
-          run: ls
+
+        - name: Read log file
+          run: Get-Content -Path C:\ProgramData\chocolatey\logs\chocolatey.log
+
+#        - name: Is stuff here?
+#          run: ls
           #run: cd FFXIVVoiceClipNameGuesser\bin\Release && dir
 
 # Download FFMPEG to res
