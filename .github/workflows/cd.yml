@@ -33,7 +33,7 @@ jobs:
 #          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
 
         - name: move it
-          run: Move-Item -Path $Env:ProgramData\chocolatey\lib\ffmpeg\tools\ffmpeg.exe -Destination ./FFXIVVoiceClipNameGuesser\bin\Release\res && ls
+          run: ls $Env:ProgramData\chocolatey\lib\ffmpeg\tools\ffmpeg.exe
 
 #        - name: Is stuff here?
 #          run: ls
