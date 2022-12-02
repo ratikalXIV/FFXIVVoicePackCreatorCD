@@ -27,7 +27,8 @@ jobs:
 
         - name: download it i guess
           shell: pwsh
-          run: powershell -ExecutionPolicy Bypass -NoProfile -File ./download-ffmpeg.ps1 Download
+          run: wget https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z -o 
+ffmpeg.7z
 
         - name: IS IT HERE?
           run: ls
