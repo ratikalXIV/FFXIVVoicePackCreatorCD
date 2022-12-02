@@ -33,7 +33,11 @@ jobs:
           run: ls
 
         - name: fuck it we extract
-          run: 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
+          run: 7z e ffmpeg.7z -oFFXIVVoiceClipNameGuesser/bin/Release/res ffmpeg.exe -r
+
+        - name: IS IT IN THERE
+          run: ls ./FFXIVVoiceClipNameGuesser/bin/Release/res
+
 
 # 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
 
