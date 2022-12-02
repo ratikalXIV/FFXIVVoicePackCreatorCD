@@ -32,8 +32,8 @@ jobs:
 #        - name: Build app
 #          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
 
-        - name: move it
-          run: ls $Env:ProgramData\chocolatey\lib\ffmpeg\tools\ffmpeg.exe
+        - name: find it
+          run: Get-ChildItem ~/ffmpeg.exe
 
 #        - name: Is stuff here?
 #          run: ls
