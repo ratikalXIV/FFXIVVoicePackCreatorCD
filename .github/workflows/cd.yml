@@ -72,6 +72,9 @@ jobs:
     - name: Test
       run: ls -R
 
+    - name: Remove things
+      run: Remove-Item ./*.xml, ./*.config, ./*.pdb, ./runtimes -force -recurse
+      
     - name: Zip it up
       uses: thedoctor0/zip-release@main
       with:
