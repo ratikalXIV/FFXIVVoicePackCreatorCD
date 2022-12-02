@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
+  Build:
     runs-on: windows-latest
     steps:
         - uses: actions/checkout@v3
@@ -38,28 +38,25 @@ jobs:
         - name: IS IT IN THERE
           run: ls ./FFXIVVoiceClipNameGuesser/bin/Release/res
 
-
 # 7z e ffmpeg.7z -offmpeg ffmpeg.exe -r
-
 
         - name: Install msbuild
           uses: microsoft/setup-msbuild@v1.1
 
-
         - name: Build app
           run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
 
-        - name: Is stuff here?
-          run: ls FFXIVVoiceClipNameGuesser\bin\Release
+#        - name: Is stuff here?
+#          run: ls FFXIVVoiceClipNameGuesser\bin\Release
 
 # Zip back up
-        - name: Zip back up
-          run: Compress-Archive -Path ./FFXIVVoiceClipNameGuesser\bin\Release -DestinationPath Release.zip
+#        - name: Zip back up
+#          run: Compress-Archive -Path ./FFXIVVoiceClipNameGuesser\bin\Release -DestinationPath Release.zip
 # upload
         - name: Upload
           uses: actions/upload-artifact@v3
           with:
             name: release
-            path: Release.zip
+            path: ./FFXIVVoiceClipNameGuesser\bin\Release
 
 
