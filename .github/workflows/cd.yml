@@ -72,8 +72,8 @@ jobs:
     - name: Test
       run: ls -R
     
-    - name: Compress down?
-      run: ./FFXIVVoicePackCreator.exe
+    - name: Remove the shit
+      run: 
 
     - name: Zip it up
       uses: thedoctor0/zip-release@main
