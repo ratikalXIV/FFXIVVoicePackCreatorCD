@@ -22,8 +22,13 @@ jobs:
 #        - name: Install ffmpeg?
 #          run: npm install ffmpeg-static
 
-        - name: Install FFMPEG?
-          run: choco install ffmpeg -y --no-progress
+#        - name: Install FFMPEG?
+#          run: choco install ffmpeg -y --no-progress
+
+        - name: download it i guess
+          shell: pwsh
+          run: powershell -ExecutionPolicy Bypass -NoProfile -File ./download-ffmpeg.ps1 Download
+
 # GOOD
 #        - name: Install msbuild
 #          uses: microsoft/setup-msbuild@v1.1
@@ -31,9 +36,6 @@ jobs:
 # GOOD
 #        - name: Build app
 #          run: msbuild FFXIVVoiceClipNameGuesser\FFXIVVoicePackCreator.csproj -p:Configuration=Release
-
-        - name: find it
-          run: Get-ChildItem ~/ffmpeg.exe
 
 #        - name: Is stuff here?
 #          run: ls
